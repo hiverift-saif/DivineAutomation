@@ -1,44 +1,48 @@
-import { Hero } from './components/Hero';
-import { Navigation } from './components/Navigation';
-import { About } from './components/About';
-import { WhyChooseUs } from './components/WhyChooseUs';
-import { Industries } from './components/Industries';
-import { Services } from './components/Services';
-import { SpecialOffer } from './components/SpecialOffer';
-import { Process } from './components/Process';
-import { FAQ } from './components/FAQ';
-import { Contact } from './components/Contact';
-import { Career } from './components/Career';
+import { useState } from 'react';
+import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { PopupForm } from './components/PopupForm';
-import { useState, useEffect } from 'react';
+import { HomePage } from './components/HomePage';
+import { AboutPage } from './components/AboutPage';
+import { ServicesPage } from './components/ServicesPage';
+import { ExpertisePage } from './components/ExpertisePage';
+import { ClientsPage } from './components/ClientsPage';
+import { ProjectsPage } from './components/ProjectsPage';
+import { GalleryPage } from './components/GalleryPage';
+import { ContactPage } from './components/ContactPage';
 
 export default function App() {
-  const [showPopup, setShowPopup] = useState(false);
+  const [currentPage, setCurrentPage] = useState('home');
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 10000); // Show popup after 10 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage setCurrentPage={setCurrentPage} />;
+      case 'about':
+        return <AboutPage setCurrentPage={setCurrentPage} />;
+      case 'services':
+        return <ServicesPage setCurrentPage={setCurrentPage} />;
+      case 'expertise':
+        return <ExpertisePage setCurrentPage={setCurrentPage} />;
+      case 'clients':
+        return <ClientsPage setCurrentPage={setCurrentPage} />;
+      case 'projects':
+        return <ProjectsPage setCurrentPage={setCurrentPage} />;
+      case 'gallery':
+        return <GalleryPage setCurrentPage={setCurrentPage} />;
+      case 'contact':
+        return <ContactPage setCurrentPage={setCurrentPage} />;
+      default:
+        return <HomePage setCurrentPage={setCurrentPage} />;
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50">
-      <Navigation />
-      <Hero />
-      <SpecialOffer />
-      <About />
-      <WhyChooseUs />
-      <Industries />
-      <Services />
-      <Process />
-      <FAQ />
-      <Contact />
-      <Career />
-      <Footer />
-      <PopupForm isOpen={showPopup} onClose={() => setShowPopup(false)} />
+    <div className="min-h-screen flex flex-col">
+      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <main className="flex-1">
+        {renderPage()}
+      </main>
+      <Footer setCurrentPage={setCurrentPage} />
     </div>
   );
 }

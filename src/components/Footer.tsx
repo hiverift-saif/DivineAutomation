@@ -1,173 +1,98 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
-export function Footer() {
-  const services = [
-    'Custom Website Design & Development',
-    'Mobile App Development',
-    'MVP Development & Testing',
-    'UI/UX Design & Prototyping',
-    'Brand Identity Design',
-    'Blockchain Solutions',
-    'E-commerce Development',
-    'API Development & Integration',
-    'Digital Marketing',
-    'SEO & Content Marketing',
-    'Email Marketing Automation',
-    'Landing Page Design',
-    'Mobile App UI Design',
-    'Cloud Migration Services',
-    'DevOps & Automation',
-    'Database Management',
-    'Business Analytics & Reporting',
-    'Operations Consultancy',
-    'Virtual Assistant Services',
-    'Maintenance & Support',
-  ];
+interface FooterProps {
+  setCurrentPage: (page: string) => void;
+}
 
-  const industries = [
-    'Banking & Financial Services',
-    'Capital Markets',
-    'Healthcare & Life Sciences',
-    'Education & E-Learning',
-    'Energy & Utilities',
-    'Communications & Media',
-    'Consumer Goods',
-    'Manufacturing',
-    'Retail & E-commerce',
-    'Travel & Hospitality',
-    'Insurance',
-    'High-Tech',
-    'Life Sciences',
-    'Public Services',
-  ];
-
-  const quickLinks = [
-    'Home',
-    'About Us',
-    'All Services',
-    'Technologies',
-    'Career',
-    'Contact Us',
-    'Book Consultation',
-  ];
+export function Footer({ setCurrentPage }: FooterProps) {
+  const handleNavClick = (page: string) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 rounded-lg flex items-center justify-center">
-                <span>HR</span>
-              </div>
-              <span className="text-2xl">HiveRift</span>
-            </div>
-            <p className="text-gray-300">
-              Transforming business challenges into growth opportunities with our 3T Pillar - Talent, Tailored, Trust.
+          <div>
+            <h3 className="text-blue-400 mb-4">Divine Automation Pvt. Ltd.</h3>
+            <p className="text-gray-400 text-sm">
+              Leading provider of turnkey industrial automation solutions with 40+ years of expertise in robotics, CNC, and process automation.
             </p>
-            <p className="text-gray-300">
-              India's No. 1 Web Development Company - Creating stunning websites that drive business growth.
-            </p>
-            <div className="space-y-3">
-              <a href="mailto:info@hiverift.com" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
-                <Mail size={18} />
-                info@hiverift.com
-              </a>
-              <a href="tel:+918814930229" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
-                <Phone size={18} />
-                +91-88-1493-0229
-              </a>
-              <div className="flex items-start gap-2 text-gray-300">
-                <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <div>
-                  <p>New Delhi, New Rohtak Rd, Ratan Nagar, Karol Bagh, Delhi, 110005</p>
-                  <p className="mt-1">265 Freure drive Cambridge ON N1S 0C1</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Our Services */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-xl mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Our Services
-            </h3>
+            <h3 className="text-blue-400 mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {services.slice(0, 10).map((service, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {service}
-                  </a>
+              {['home', 'about', 'services', 'expertise'].map((page) => (
+                <li key={page}>
+                  <button
+                    onClick={() => handleNavClick(page)}
+                    className="text-gray-400 hover:text-white transition-colors text-sm capitalize"
+                  >
+                    {page === 'about' ? 'About Us' : page === 'contact' ? 'Contact Us' : page}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Industries We Serve */}
+          {/* More Links */}
           <div>
-            <h3 className="text-xl mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Industries We Serve
-            </h3>
+            <h3 className="text-blue-400 mb-4">More</h3>
             <ul className="space-y-2">
-              {industries.slice(0, 10).map((industry, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {industry}
-                  </a>
+              {['projects', 'clients', 'gallery', 'contact'].map((page) => (
+                <li key={page}>
+                  <button
+                    onClick={() => handleNavClick(page)}
+                    className="text-gray-400 hover:text-white transition-colors text-sm capitalize"
+                  >
+                    {page === 'contact' ? 'Contact Us' : page}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Quick Links & Support */}
+          {/* Contact Info */}
           <div>
-            <h3 className="text-xl mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 mb-6">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {link}
-                  </a>
-                </li>
-              ))}
+            <h3 className="text-blue-400 mb-4">Contact Us</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                <span className="text-gray-400 text-sm">
+                  20/4, Napco Gear Complex, Plot No.19, Mathura Road, Faridabad – 121004, Haryana
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <a href="tel:9810275986" className="text-gray-400 hover:text-white text-sm">
+                  +91 9810275986
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <a href="tel:9873089753" className="text-gray-400 hover:text-white text-sm">
+                  +91 9873089753
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <a href="mailto:info@divineautomation.in" className="text-gray-400 hover:text-white text-sm">
+                  info@divineautomation.in
+                </a>
+              </li>
             </ul>
-
-            <h3 className="text-xl mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Legal & Support
-            </h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Terms & Conditions</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Contact Support</a></li>
-            </ul>
-
-            <div className="mt-4 space-y-1 text-sm text-gray-400">
-              <p>Support: support@hiverift.com</p>
-              <p>Legal: legal@hiverift.com</p>
-              <p>Privacy: privacy@hiverift.com</p>
-              <p>Business: business@hiverift.com</p>
-            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              © 2025 HiveRift | All Rights Reserved
-            </p>
-            <div className="flex items-center gap-4 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <span>|</span>
-              <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-              <span>|</span>
-              <a href="https://hiverift.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.hiverift.com</a>
-            </div>
-          </div>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-gray-400 text-sm">
+            © 2025 Divine Automation Pvt. Ltd. | All Rights Reserved | Designed by Khatu Shyam Technologies
+          </p>
         </div>
       </div>
     </footer>
