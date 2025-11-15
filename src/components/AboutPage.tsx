@@ -13,7 +13,7 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
       {/* Page Header */}
       <section className="relative py-16 text-white overflow-hidden">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1760259205457-259439e19b39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0ZWNobm9sb2d5JTIwYnVpbGRpbmd8ZW58MXx8fHwxNzYyODI4ODgzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="https://images.unsplash.com/photo-1761195696590-3490ea770aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYzMTE3OTI2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           alt="About Divine Automation"
           className="absolute inset-0 w-full h-full object-cover"
         />

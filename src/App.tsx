@@ -5,7 +5,6 @@ import { HomePage } from './components/HomePage';
 import { AboutPage } from './components/AboutPage';
 import { ServicesPage } from './components/ServicesPage';
 import { ExpertisePage } from './components/ExpertisePage';
-import { ClientsPage } from './components/ClientsPage';
 import { ProjectsPage } from './components/ProjectsPage';
 import { GalleryPage } from './components/GalleryPage';
 import { ContactPage } from './components/ContactPage';
@@ -23,8 +22,6 @@ export default function App() {
         return <ServicesPage setCurrentPage={setCurrentPage} />;
       case 'expertise':
         return <ExpertisePage setCurrentPage={setCurrentPage} />;
-      case 'clients':
-        return <ClientsPage setCurrentPage={setCurrentPage} />;
       case 'projects':
         return <ProjectsPage setCurrentPage={setCurrentPage} />;
       case 'gallery':

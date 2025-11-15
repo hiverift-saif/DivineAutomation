@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
+import logo from 'figma:asset/6d154aa58b00c12c73fe37732c872db7d9fd9cb7.png';
 
 interface FooterProps {
   setCurrentPage: (page: string) => void;
@@ -16,7 +17,11 @@ export function Footer({ setCurrentPage }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-blue-400 mb-4">Divine Automation Pvt. Ltd.</h3>
+            <img 
+              src={logo} 
+              alt="Divine Automation Logo" 
+              className="h-20 w-auto object-contain mb-4 rounded-lg"
+            />
             <p className="text-gray-400 text-sm">
               Leading provider of turnkey industrial automation solutions with 40+ years of expertise in robotics, CNC, and process automation.
             </p>
@@ -43,7 +48,7 @@ export function Footer({ setCurrentPage }: FooterProps) {
           <div>
             <h3 className="text-blue-400 mb-4">More</h3>
             <ul className="space-y-2">
-              {['projects', 'clients', 'gallery', 'contact'].map((page) => (
+              {['projects', 'gallery', 'contact'].map((page) => (
                 <li key={page}>
                   <button
                     onClick={() => handleNavClick(page)}

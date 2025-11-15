@@ -1,7 +1,7 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface ProjectsPageProps {
   setCurrentPage?: (page: string) => void;
@@ -14,64 +14,56 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
       title: 'HVAC Testing System',
       category: 'Testing Machines',
       description: 'Complete automated testing system for HVAC units with performance validation, leak testing, and noise measurement capabilities.',
-      technologies: ['PLC Control', 'SCADA', 'Data Logging', 'Pneumatic Systems'],
-      image: 'https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZW5naW5lZXJpbmd8ZW58MXx8fHwxNzYyODUzNTIyfDA&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['PLC Control', 'SCADA', 'Data Logging', 'Pneumatic Systems']
     },
     {
       client: 'Subros Ltd.',
       title: 'Compressor Testing Machine',
       category: 'Testing Machines',
       description: 'Automated compressor testing with pressure, flow, and performance measurements. Includes safety interlocks and comprehensive reporting.',
-      technologies: ['Hydraulic Systems', 'Pressure Sensors', 'LabVIEW', 'Safety Systems'],
-      image: 'https://images.unsplash.com/photo-1716191300020-b52dec5b70a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbmMlMjBtYWNoaW5lJTIwZmFjdG9yeXxlbnwxfHx8fDE3NjI4NTc4NjF8MA&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['Hydraulic Systems', 'Pressure Sensors', 'LabVIEW', 'Safety Systems']
     },
     {
       client: 'Sunbeam Auto',
       title: 'Piston Groove Testing using Vision Camera',
       category: 'Vision Inspection',
       description: 'High-precision vision-based inspection system for piston groove measurement using advanced camera technology and image processing.',
-      technologies: ['Machine Vision', 'Image Processing', 'PLC', 'Reject Mechanism'],
-      image: 'https://images.unsplash.com/photo-1761195696590-3490ea770aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyODQwNTM4fDA&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['Machine Vision', 'Image Processing', 'PLC', 'Reject Mechanism']
     },
     {
       client: 'Maruti Suzuki',
       title: 'Robotic Spot Welding Cell',
       category: 'Robotic Integration',
       description: 'Complete robotic spot welding cell with Fanuc robots, custom fixtures, and automated part loading/unloading system.',
-      technologies: ['Fanuc Robotics', 'Spot Welding', 'Safety Fencing', 'Part Tracking'],
-      image: 'https://images.unsplash.com/photo-1727373203627-73457889fe0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwcm9ib3RpY3MlMjB3ZWxkaW5nfGVufDF8fHx8MTc2Mjg1Nzg2MXww&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['Fanuc Robotics', 'Spot Welding', 'Safety Fencing', 'Part Tracking']
     },
     {
       client: 'Maruti Suzuki',
       title: 'EECO Robot Interfacing',
       category: 'Robotic Integration',
       description: 'Integration of robotic systems with existing production line for EECO model assembly, including PLC communication and synchronization.',
-      technologies: ['PLC Integration', 'Robot Communication', 'Line Balancing', 'HMI'],
-      image: 'https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljJTIwYXNzZW1ibHklMjBsaW5lfGVufDF8fHx8MTc2Mjg1Nzg2MHww&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['PLC Integration', 'Robot Communication', 'Line Balancing', 'HMI']
     },
     {
       client: 'Raunaq Auto',
       title: 'Multi-CNC Robot Loading Automation',
       category: 'Robotic Integration',
       description: 'Automated robot loading system for multiple CNC machines with tool change management and part verification.',
-      technologies: ['Multi-Machine Tending', 'Robot Programming', 'CNC Interface', 'Part Storage'],
-      image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW51ZmFjdHVyaW5nJTIwcGxhbnR8ZW58MXx8fHwxNzYyNzY1NzYxfDA&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['Multi-Machine Tending', 'Robot Programming', 'CNC Interface', 'Part Storage']
     },
     {
       client: 'Tata Motors',
       title: 'Assembly Line Automation',
       category: 'Assembly Automation',
       description: 'Complete assembly line automation with poka-yoke systems, automated torque tools, and quality gate stations.',
-      technologies: ['Conveyor Systems', 'Poka-Yoke', 'Torque Monitoring', 'Traceability'],
-      image: 'https://images.unsplash.com/photo-1761195696590-3490ea770aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyODQwNTM4fDA&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['Conveyor Systems', 'Poka-Yoke', 'Torque Monitoring', 'Traceability']
     },
     {
       client: 'Hindalco Industries',
       title: 'Special Purpose Machine for Metal Processing',
       category: 'SPM Manufacturing',
       description: 'Custom-designed SPM for specialized metal processing operations with hydraulic control and automated material handling.',
-      technologies: ['Hydraulic Systems', 'Custom Tooling', 'Safety Systems', 'Process Control'],
-      image: 'https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZW5naW5lZXJpbmd8ZW58MXx8fHwxNzYyODUzNTIyfDA&ixlib=rb-4.1.0&q=80&w=1080'
+      technologies: ['Hydraulic Systems', 'Custom Tooling', 'Safety Systems', 'Process Control']
     }
   ];
 
@@ -82,7 +74,7 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
       {/* Page Header */}
       <section className="relative py-16 text-white overflow-hidden">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1542621334-a254cf47733d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBibHVlcHJpbnR8ZW58MXx8fHwxNzYyNzQ1MTA4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="https://images.unsplash.com/photo-1718824331840-399943ff5c1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZ2VhcnMlMjBtZWNoYW5pc21zfGVufDF8fHx8MTc2MzExNzkzNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           alt="Our Projects"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -119,19 +111,10 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="hover:shadow-xl transition-shadow overflow-hidden">
-                <div className="relative h-64">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-blue-900">{project.category}</Badge>
-                  </div>
-                </div>
                 <CardContent className="p-6">
-                  <div className="mb-2">
+                  <div className="mb-2 flex justify-between items-start">
                     <span className="text-sm text-blue-900">{project.client}</span>
+                    <Badge className="bg-blue-900">{project.category}</Badge>
                   </div>
                   <h3 className="text-gray-900 mb-3">{project.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{project.description}</p>

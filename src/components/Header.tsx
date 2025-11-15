@@ -1,5 +1,6 @@
 import { Phone, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import logo from 'figma:asset/6d154aa58b00c12c73fe37732c872db7d9fd9cb7.png';
 
 interface HeaderProps {
   currentPage: string;
@@ -14,7 +15,6 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
     { id: 'about', label: 'About Us' },
     { id: 'services', label: 'Services' },
     { id: 'expertise', label: 'Expertise' },
-    { id: 'clients', label: 'Clients' },
     { id: 'projects', label: 'Projects' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact Us' },
@@ -29,19 +29,19 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Top Bar */}
-      <div className="bg-blue-900 text-white py-2">
+      <div className="bg-blue-900 py-2">
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-4">
-            <a href="tel:9810275986" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+            <a href="tel:9810275986" className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors">
               <Phone className="h-4 w-4" />
               <span className="text-sm">+91 9810275986</span>
             </a>
-            <a href="tel:9873089753" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+            <a href="tel:9873089753" className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors">
               <Phone className="h-4 w-4" />
               <span className="text-sm">+91 9873089753</span>
             </a>
           </div>
-          <div className="text-sm">
+          <div className="text-sm text-white">
             <span>40+ Years of Industrial Expertise</span>
           </div>
         </div>
@@ -52,13 +52,11 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleNavClick('home')}>
-            <div className="h-12 w-12 bg-blue-900 rounded-lg flex items-center justify-center text-white">
-              <span>DA</span>
-            </div>
-            <div>
-              <h1 className="text-blue-900">Divine Automation</h1>
-              <p className="text-sm text-gray-600">Pvt. Ltd.</p>
-            </div>
+            <img 
+              src={logo} 
+              alt="Divine Automation Logo" 
+              className="h-14 w-auto object-contain rounded-lg"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -69,7 +67,7 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
                 onClick={() => handleNavClick(item.id)}
                 className={`transition-colors ${
                   currentPage === item.id
-                    ? 'text-blue-900'
+                    ? 'text-blue-900 font-semibold'
                     : 'text-gray-700 hover:text-blue-900'
                 }`}
               >

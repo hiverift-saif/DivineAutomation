@@ -16,7 +16,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
       {/* Page Header */}
       <section className="relative py-16 text-white overflow-hidden">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbW11bmljYXRpb258ZW58MXx8fHwxNzYyODU4MTczfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="https://images.unsplash.com/photo-1605434896704-336c825fe58e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwY29udHJvbCUyMHBhbmVsfGVufDF8fHx8MTc2MzA5OTc3NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           alt="Contact Us"
           className="absolute inset-0 w-full h-full object-cover"
         />

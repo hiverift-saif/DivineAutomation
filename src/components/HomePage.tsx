@@ -22,17 +22,17 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1761195696590-3490ea770aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyODQwNTM4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      gradient: 'from-blue-900 via-blue-800 to-blue-700',
       title: 'Turnkey Automation Solutions Under One Roof',
       subtitle: 'Complete industrial automation from concept to commissioning'
     },
     {
-      image: 'https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljJTIwYXNzZW1ibHklMjBsaW5lfGVufDF8fHx8MTc2Mjg1Nzg2MHww&ixlib=rb-4.1.0&q=80&w=1080',
+      gradient: 'from-indigo-900 via-blue-900 to-cyan-800',
       title: '40+ Years of Industrial Expertise',
       subtitle: 'Specializing in Robotics, CNC & Process Automation'
     },
     {
-      image: 'https://images.unsplash.com/photo-1727373203627-73457889fe0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwcm9ib3RpY3MlMjB3ZWxkaW5nfGVufDF8fHx8MTc2Mjg1Nzg2MXww&ixlib=rb-4.1.0&q=80&w=1080',
+      gradient: 'from-slate-900 via-blue-900 to-indigo-900',
       title: 'Innovation Meets Precision',
       subtitle: 'Delivering international quality standards across industries'
     }
@@ -64,12 +64,13 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <ImageWithFallback
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient}`}>
+              {/* Decorative overlay pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+              </div>
+            </div>
             <div className="absolute inset-0 flex items-center justify-center text-center text-white px-4">
               <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <Badge className="mb-4 bg-blue-600/90 backdrop-blur-sm border-none">
@@ -308,7 +309,7 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
               {
                 title: 'Maruti Suzuki - Robotic Welding Cell',
                 client: 'Maruti Suzuki',
-                image: 'https://images.unsplash.com/photo-1727373203627-73457889fe0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwcm9ib3RpY3MlMjB3ZWxkaW5nfGVufDF8fHx8MTc2Mjg1Nzg2MXww&ixlib=rb-4.1.0&q=80&w=1080',
+                image: 'https://images.unsplash.com/photo-1735494035464-94fdd0f8e780?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljJTIwd2VsZGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYzMTE3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
                 description: 'Complete robotic spot welding solution with automated loading system'
               },
               {

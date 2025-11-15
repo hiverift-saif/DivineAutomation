@@ -65,7 +65,7 @@ export function ClientsPage({ setCurrentPage }: ClientsPageProps) {
       {/* Page Header */}
       <section className="relative py-16 text-white overflow-hidden">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1745847768380-2caeadbb3b71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGhhbmRzaGFrZSUyMHBhcnRuZXJzaGlwfGVufDF8fHx8MTc2MjgxNTUzOHww&ixlib=rb-4.1.0&q=80&w=1080"
+          src="https://images.unsplash.com/photo-1563456019498-843e11bdaae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBmYWN0b3J5JTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjMwNDY1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           alt="Our Valued Clients"
           className="absolute inset-0 w-full h-full object-cover"
         />
