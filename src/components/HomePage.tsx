@@ -12,6 +12,12 @@ import hindalcoLogo from 'figma:asset/abf0bdfd5c44da8e61acca9223acb92e7b1382f7.p
 import sunbeamLogo from 'figma:asset/2af6ed1003c8b5265960c7652e34d49de31f48e2.png';
 import jbmLogo from 'figma:asset/b23eca0b74141dd22af41743b37230e2acfef5c5.png';
 import caparoLogo from 'figma:asset/a10b0a2c5c63701bb34e298569cb1d48f0c72918.png';
+import project1Image from 'figma:asset/42ec56fa04181d2459ef72deb20b1af29daabebc.png';
+import project2Image from 'figma:asset/39d3a771e77be6f89e723689531026d75e54980a.png';
+import project3Image from 'figma:asset/a44d3a4261bb1f6d708c394e844c9488193809b4.png';
+import project4Image from 'figma:asset/d8066060b19b83e7fd42999f869d30b18049ac28.png';
+import project5Image from 'figma:asset/96b3b39da30a1cd35e9c3aecf194ee791cfac138.png';
+import project11Image from "../assets/project5Image.mp4"
 
 interface HomePageProps {
   setCurrentPage?: (page: string) => void;
@@ -304,37 +310,70 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
             <h2 className="text-blue-900 mb-4 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent font-black">Featured Projects</h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-normal">Showcasing our expertise in action</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
               {
-                title: 'Maruti Suzuki - Robotic Welding Cell',
+                title: 'Maruti EECO Robotic Job',
                 client: 'Maruti Suzuki',
-                image: 'https://images.unsplash.com/photo-1735494035464-94fdd0f8e780?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljJTIwd2VsZGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYzMTE3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-                description: 'Complete robotic spot welding solution with automated loading system'
+                image: project1Image,
+                description: 'Robotic automation cell for Maruti EECO production line with advanced control systems'
               },
               {
-                title: 'Subros - HVAC Testing System',
-                client: 'Subros Ltd.',
-                image: 'https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZW5naW5lZXJpbmd8ZW58MXx8fHwxNzYyODUzNTIyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-                description: 'Automated testing system with performance validation and data logging'
+                title: 'JBML Robotic Automation for Alto 800',
+                client: 'Jay Bharat Maruti',
+                image: project2Image,
+                description: 'Complete robotic automation solution for Alto 800 assembly with integrated PLC control'
               },
               {
-                title: 'Raunaq Auto - CNC Automation',
+                title: 'Sunbeam Auto - 4 CNC Machines with Yaskawa Robot',
+                client: 'Sunbeam Auto',
+                image: project3Image,
+                description: '4 CNC machines operated by Yaskawa Robot for automated machining operations'
+              },
+              {
+                title: 'Raunaq Auto Robotic Automation',
                 client: 'Raunaq Auto',
-                image: 'https://images.unsplash.com/photo-1716191300020-b52dec5b70a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbmMlMjBtYWNoaW5lJTIwZmFjdG9yeXxlbnwxfHx8fDE3NjI4NTc4NjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-                description: 'Multi-machine robotic loading system for continuous production'
+                image: project4Image,
+                description: 'Advanced robotic automation system with multi-axis robots for precision manufacturing'
+              },
+              {
+                title: 'Subros Performance Testing Machine for Compressors',
+                client: 'Subros Ltd.',
+                image: project5Image,
+                description: 'A fully integrated cell including conveyors, robots, and control panels — all supplied and delivered by us.'
               }
+
+,{
+    title: 'Automation Demo Video',
+    client: 'Video Project',
+    video: project11Image,
+    description: 'This video demonstrates the automation process with complete workflow.'
+  }
+
             ].map((project, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border-2 hover:border-blue-300">
-                <div className="relative h-48 overflow-hidden">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <Badge className="absolute top-4 right-4 bg-blue-600 text-white">{project.client}</Badge>
-                </div>
+          <div className="relative h-80 overflow-hidden">
+  {project.video ? (
+    <video 
+      src={project.video}
+      className="w-full h-full object-cover"
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
+  ) : (
+    <ImageWithFallback
+      src={project.image}
+      alt={project.title}
+      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+    />
+  )}
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+  <Badge className="absolute top-4 right-4 bg-blue-600 text-white">{project.client}</Badge>
+</div>
+
                 <CardContent className="p-6">
                   <h3 className="mb-2 group-hover:text-blue-600 transition-colors font-bold">{project.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed font-normal">{project.description}</p>
@@ -417,11 +456,11 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
               { name: 'Fanuc Robotics', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Fanuc_logo.svg/200px-Fanuc_logo.svg.png' },
-              { name: 'ABB Robotics', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/512px-ABB_logo.svg.png' },
-              { name: 'Siemens PLC', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Siemens-Logo-700x394.png' },
               { name: 'Allen Bradley', logo: 'https://www.dbicontrol.co.uk/wp-content/uploads/2019/10/allen-bradley-vector-logo.png' },
               { name: 'Schneider Electric', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Schneider-Electric-Logo.jpg' },
-              { name: 'Mitsubishi', logo: 'https://download.logo.wine/logo/Mitsubishi_Electric/Mitsubishi_Electric-Logo.wine.png' },
+              { name: 'Mitsubishi PLC', logo: 'https://download.logo.wine/logo/Mitsubishi_Electric/Mitsubishi_Electric-Logo.wine.png' },
+              { name: 'Mitsubishi AC Drive', logo: 'https://download.logo.wine/logo/Mitsubishi_Electric/Mitsubishi_Electric-Logo.wine.png' },
+              { name: 'Mitsubishi Servo Motor & Controllers', logo: 'https://download.logo.wine/logo/Mitsubishi_Electric/Mitsubishi_Electric-Logo.wine.png' },
               { name: 'Festo Pneumatics', logo: 'https://ajm.es/wp-content/uploads/2017/02/festo-pneumatic-logo-marcas-2017.png' },
               { name: 'Bosch Rexroth', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Logo_of_Bosch_Rexroth_AG.svg' },
               { name: 'Cognex Vision', logo: 'https://www.cognex.com/library/media/company/cognex-logo.jpg?sc_lang=ru-ru' },
