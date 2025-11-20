@@ -347,8 +347,7 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
     title: 'Automation Demo Video',
     client: 'Video Project',
     video: project11Image,
-    description: 'This video demonstrates the automation process with complete workflow.'
-  }
+    description: 'Yaskawa robot operates four Fanuc CNC machines with conveyors, ensuring smooth handling, higher productivity, and efficiency'}
 
             ].map((project, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border-2 hover:border-blue-300">
