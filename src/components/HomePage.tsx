@@ -14,11 +14,9 @@ import jbmLogo from 'figma:asset/b23eca0b74141dd22af41743b37230e2acfef5c5.png';
 import caparoLogo from 'figma:asset/a10b0a2c5c63701bb34e298569cb1d48f0c72918.png';
 import project1Image from 'figma:asset/42ec56fa04181d2459ef72deb20b1af29daabebc.png';
 import project2Image from 'figma:asset/39d3a771e77be6f89e723689531026d75e54980a.png';
-import project3Image from 'figma:asset/a44d3a4261bb1f6d708c394e844c9488193809b4.png';
 import project4Image from 'figma:asset/d8066060b19b83e7fd42999f869d30b18049ac28.png';
 import project5Image from 'figma:asset/96b3b39da30a1cd35e9c3aecf194ee791cfac138.png';
-import project11Image from "../assets/project5Image.mp4"
-
+import video5 from  "../assets/video5.mp4";
 interface HomePageProps {
   setCurrentPage?: (page: string) => void;
 }
@@ -325,40 +323,35 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
                 description: 'Complete robotic automation solution for Alto 800 assembly with integrated PLC control'
               },
               {
-                title: 'Sunbeam Auto - 4 CNC Machines with Yaskawa Robot',
-                client: 'Sunbeam Auto',
-                image: project3Image,
-                description: '4 CNC machines operated by Yaskawa Robot for automated machining operations'
-              },
-              {
                 title: 'Raunaq Auto Robotic Automation',
                 client: 'Raunaq Auto',
                 image: project4Image,
                 description: 'Advanced robotic automation system with multi-axis robots for precision manufacturing'
               },
               {
-                title: 'Subros Performance Testing Machine for Compressors',
+                title: 'Subros Performance Testing Machine for AC Compressors',
                 client: 'Subros Ltd.',
                 image: project5Image,
-                description: 'A fully integrated cell including conveyors, robots, and control panels — all supplied and delivered by us.'
-              }
-
-,{
-    title: 'Automation Demo Video',
-    client: 'Video Project',
-    video: project11Image,
-    description: 'Yaskawa robot operates four Fanuc CNC machines with conveyors, ensuring smooth handling, higher productivity, and efficiency'}
+                description: 'Performance testing machine for AC compressors to identify faults and fault types with automated diagnostic systems'
+              },
+     {
+                title: 'Automated Machine Tending with Yaskawa Robot and Fanuc CNC Machines',
+                client: 'Raunaq Auto',
+                image: video5,
+                description: 'Yaskawa robot operates four Fanuc CNC machines with conveyors, ensuring smooth handling, higher productivity, and efficiency.'
+              },
 
             ].map((project, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border-2 hover:border-blue-300">
-          <div className="relative h-80 overflow-hidden">
-  {project.video ? (
-    <video 
-      src={project.video}
+              <div className="relative h-80 overflow-hidden">
+  {/* Check if file is video */}
+  {project.image?.endsWith(".mp4") || project.image?.endsWith(".webm") ? (
+    <video
+      src={project.image}
       className="w-full h-full object-cover"
-      autoPlay
-      loop
       muted
+      loop
+      autoPlay
       playsInline
     />
   ) : (
@@ -464,8 +457,7 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
               { name: 'Bosch Rexroth', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Logo_of_Bosch_Rexroth_AG.svg' },
               { name: 'Cognex Vision', logo: 'https://www.cognex.com/library/media/company/cognex-logo.jpg?sc_lang=ru-ru' },
               { name: 'Omron', logo: 'https://www.weighingreview.com/storage/companies_logos/1558642634_OMRON_logo_OL_CMYK_201607.jpg' },
-              { name: 'Yaskawa', logo: 'https://www.evolectriconline.com/images/content/original-1645536471827.png' },
-              { name: 'KUKA Robotics', logo: 'https://download.logo.wine/logo/KUKA/KUKA-Logo.wine.png' }
+              { name: 'Yaskawa', logo: 'https://www.evolectriconline.com/images/content/original-1645536471827.png' }
             ].map((partner, index) => (
               <div
                 key={index}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
@@ -11,6 +11,10 @@ import { ContactPage } from './components/ContactPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    document.title = 'Divine Automation Pvt Ltd';
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
