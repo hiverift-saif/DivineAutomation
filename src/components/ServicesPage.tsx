@@ -1,4 +1,4 @@
-import { Lightbulb, PenTool, Settings, Cpu, Wind, TrendingUp } from 'lucide-react';
+import { Lightbulb, PenTool, Settings, Cpu, Wind, TrendingUp, Bot } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Button } from './ui/button';
@@ -29,6 +29,17 @@ export function ServicesPage({ setCurrentPage }: ServicesPageProps) {
         'System architecture development',
         'Component selection and specification',
         'Detailed engineering drawings'
+      ]
+    },
+    {
+      icon: Bot,
+      title: 'Robotic Automation',
+      description: 'Complete robotic automation solutions for Mig, Tig, Spot Welding and Machine Tending Operations. We provide all accessories of Robotic Cell including supply, installation, and commissioning services.',
+      features: [
+        'Mig, Tig, and Spot Welding automation',
+        'Machine tending operations',
+        'Complete robotic cell accessories supply',
+        'Installation and commissioning services'
       ]
     },
     {

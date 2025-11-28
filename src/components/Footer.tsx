@@ -22,8 +22,11 @@ export function Footer({ setCurrentPage }: FooterProps) {
               alt="Divine Automation Logo" 
               className="h-20 w-auto object-contain mb-4 rounded-lg"
             />
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm mb-2">
               Leading provider of turnkey industrial automation solutions with 40+ years of expertise in robotics, CNC, and process automation.
+            </p>
+            <p className="text-blue-400 text-sm">
+              GST No.: 06AADCD0101H1ZG
             </p>
           </div>
 
@@ -85,9 +88,17 @@ export function Footer({ setCurrentPage }: FooterProps) {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href="mailto:info@divineautomation.in" className="text-gray-400 hover:text-white text-sm">
-                  info@divineautomation.in
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:info@divineautomation.in" className="text-gray-400 hover:text-white text-sm">
+                    info@divineautomation.in
+                  </a>
+                  <a href="mailto:dmandal77@yahoo.com" className="text-gray-400 hover:text-white text-sm">
+                    dmandal77@yahoo.com
+                  </a>
+                  <a href="mailto:divineautomation@yahoo.com" className="text-gray-400 hover:text-white text-sm">
+                    divineautomation@yahoo.com
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

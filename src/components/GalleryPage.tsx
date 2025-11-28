@@ -8,6 +8,7 @@ import washingMachine from 'figma:asset/fbbec368824a518afb4a00aeefa976a82d38df81
 import controlPanel from 'figma:asset/b74b7d0eaa180d78acbe2c779455e1a400b58f94.png';
 import automationPanel from 'figma:asset/7e05c796984544e040a9907c0d69206ee125e4c8.png';
 import roboticCell from 'figma:asset/a092a76cc5c0377ef164e382d7b5bf60f5d43567.png';
+import acKnobTester from 'figma:asset/a1bf2e7b1d5453b7520086d1ea22b6ba8ae07eb8.png';
 
 interface GalleryPageProps {
   setCurrentPage?: (page: string) => void;
@@ -22,28 +23,28 @@ export function GalleryPage({ setCurrentPage }: GalleryPageProps) {
     },
     {
       url: spmMachine2,
-      title: 'Hydraulic Press Machine',
-      description: 'High-performance hydraulic press with automated controls'
+      title: 'Hydraulic Leak Testing Machine',
+      description: 'Hydraulic leak testing machine made for 4 wheeler cylinder heads leak testing'
     },
     {
       url: spmMachine3,
-      title: 'Manufacturing Work Station',
-      description: 'Precision manufacturing and assembly workstation'
+      title: 'Dual Leak Testing Machine',
+      description: 'Dual leak testing machine for pistons of automobile using French ATEQ instrument'
     },
     {
       url: testingMachine,
-      title: 'Automated Testing Machine',
-      description: 'Advanced testing system with multi-panel control interface'
+      title: 'Compressor Washing & Noise Testing Machine',
+      description: 'Machine made to run glycol through compressors to wash internal parts and check noise generated and plot graphs'
     },
     {
       url: washingMachine,
       title: 'Washing Drying & Oiling Machine',
-      description: 'Industrial washing, drying and oiling system by Divine Automation'
+      description: 'Washing, drying and oiling machine used for Conrods of automobile industry'
     },
     {
       url: controlPanel,
       title: 'Digital Control System',
-      description: 'Touch screen control panel with automated processing capability'
+      description: 'System to detect any dirt, crack, coolant inside the grooves of pistons used for automobiles'
     },
     {
       url: automationPanel,
@@ -52,8 +53,13 @@ export function GalleryPage({ setCurrentPage }: GalleryPageProps) {
     },
     {
       url: roboticCell,
-      title: 'Industrial Robotic Work Cell',
-      description: 'Automated robotic cell with precision pick and place operations'
+      title: 'Industrial Robotic Spot Welding Cell',
+      description: 'Automated robotic cell for precision spot welding operations'
+    },
+    {
+      url: acKnobTester,
+      title: 'AC Knob Torque Testing Machine - Subros',
+      description: 'Machine to measure the torque required to move car AC knobs in different modes and plot a graph with automatic data recording using laser bar code reader'
     }
   ];
 
@@ -83,19 +89,18 @@ export function GalleryPage({ setCurrentPage }: GalleryPageProps) {
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+                  className="group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow bg-white"
                 >
-                  <div className="relative h-80">
+                  <div className="relative h-80 overflow-hidden">
                     <ImageWithFallback
                       src={image.url}
                       alt={image.title}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-white mb-2">{image.title}</h3>
-                    <p className="text-white/90 text-sm">{image.description}</p>
+                  <div className="p-6 bg-white">
+                    <h3 className="text-blue-900 mb-2">{image.title}</h3>
+                    <p className="text-gray-600 text-sm">{image.description}</p>
                   </div>
                 </div>
               ))}

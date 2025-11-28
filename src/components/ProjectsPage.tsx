@@ -10,7 +10,7 @@ interface ProjectsPageProps {
 export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
   const projects = [
     {
-      client: 'Subros Ltd.',
+      client: 'SUNDAN LTD.',
       title: 'HVAC Testing System',
       category: 'Testing Machines',
       description: 'Complete automated testing system for HVAC units with performance validation, leak testing, and noise measurement capabilities.',
@@ -21,7 +21,7 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
       title: 'Compressor Testing Machine',
       category: 'Testing Machines',
       description: 'Automated compressor testing with pressure, flow, and performance measurements. Includes safety interlocks and comprehensive reporting.',
-      technologies: ['Hydraulic Systems', 'Pressure Sensors', 'LabVIEW', 'Safety Systems']
+      technologies: ['Hydraulic Systems', 'Pressure Sensors', 'Mitsubishi PLC', 'Safety Systems']
     },
     {
       client: 'Sunbeam Auto',
@@ -31,11 +31,25 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
       technologies: ['Machine Vision', 'Image Processing', 'PLC', 'Reject Mechanism']
     },
     {
+      client: 'JBM & Caparo Maruti',
+      title: 'Ertiga Car Assembly - Robotic Interfacing and Automation',
+      category: 'Robotic Integration',
+      description: 'Complete robotic interfacing and automation solution for Ertiga car assembly line, including robot programming, PLC integration, and production line synchronization.',
+      technologies: ['Robotic Programming', 'PLC Integration', 'Line Automation', 'Safety Systems']
+    },
+    {
+      client: 'JBM & Caparo Maruti',
+      title: 'Alto 800 Car Assembly - Robotic Interfacing and Automation',
+      category: 'Robotic Integration',
+      description: 'Automated robotic system for Alto 800 assembly operations with seamless integration to existing production infrastructure and quality control systems.',
+      technologies: ['Robot Interfacing', 'Assembly Automation', 'Quality Control', 'Production Tracking']
+    },
+    {
       client: 'Maruti Suzuki',
       title: 'Robotic Spot Welding Cell',
       category: 'Robotic Integration',
-      description: 'Complete robotic spot welding cell with Fanuc robots, custom fixtures, and automated part loading/unloading system.',
-      technologies: ['Fanuc Robotics', 'Spot Welding', 'Safety Fencing', 'Part Tracking']
+      description: 'Complete robotic spot welding for Maruti models including 800, Omni, Zen, Alto, WagonR, and EECO. Robot integration including wiring, sensors, and PLC programming. Supply of Mitsubishi PLC and interfacing of Fanuc Robots with Mitsubishi PLC.',
+      technologies: ['Fanuc Robotics', 'Mitsubishi PLC', 'Spot Welding', 'Robot Interfacing', 'PLC Programming']
     },
     {
       client: 'Maruti Suzuki',
@@ -53,17 +67,38 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
     },
     {
       client: 'Tata Motors',
-      title: 'Assembly Line Automation',
-      category: 'Assembly Automation',
-      description: 'Complete assembly line automation with poka-yoke systems, automated torque tools, and quality gate stations.',
-      technologies: ['Conveyor Systems', 'Poka-Yoke', 'Torque Monitoring', 'Traceability']
+      title: 'World Truck Project - 7 Fanuc Robots',
+      category: 'Robotic Integration',
+      description: 'Supply and integration of 7 Fanuc Robots with control panel for the World Truck Project. Complete turnkey robotic automation solution.',
+      technologies: ['Fanuc Robotics', 'Control Panel', 'Robot Integration', 'Project Management']
     },
     {
       client: 'Hindalco Industries',
-      title: 'Special Purpose Machine for Metal Processing',
+      title: 'Mitsubishi PLC & Ferrule Printing Systems',
+      category: 'PLC Integration',
+      description: 'Integration of Mitsubishi PLC for metal processing operations. Supply of cable ferrule printing machines and accessories imported from Japan.',
+      technologies: ['Mitsubishi PLC', 'Ferrule Printing', 'Japan Equipment', 'System Integration']
+    },
+    {
+      client: 'Sharjah, UAE',
+      title: 'Automatic Brazing Machine for AC Condensers',
       category: 'SPM Manufacturing',
-      description: 'Custom-designed SPM for specialized metal processing operations with hydraulic control and automated material handling.',
-      technologies: ['Hydraulic Systems', 'Custom Tooling', 'Safety Systems', 'Process Control']
+      description: 'Indigenously designed and manufactured automatic brazing machine for AC condensers. Uses a SCARA Robot to place copper U-tubes on the condenser. Machine exported to Sharjah, UAE.',
+      technologies: ['SCARA Robot', 'Brazing Automation', 'Export Project', 'Custom Design']
+    },
+    {
+      client: 'Ramco Industries',
+      title: 'Automatic Tile Cutting & Robotic Arms',
+      category: 'Robotic Integration',
+      description: 'Supplied automatic tiles cutting machines to Rajasthan and Madras units. Provided in-house designed robotic arms with vacuum pads to segregate cut tiles in a stack.',
+      technologies: ['Custom Robotics', 'Vacuum Systems', 'Tile Processing', 'Material Handling']
+    },
+    {
+      client: 'Amtek Auto',
+      title: 'Robotic Cells with Marposs & Laser Marking',
+      category: 'Robotic Integration',
+      description: 'Supplied two robotic cells with Marposs and in-house laser marking machine. Used to check quality of connecting rods of 4-wheelers, weigh them, and segregate based on quality and weight.',
+      technologies: ['Marposs', 'Laser Marking', 'Quality Inspection', 'Weight Segregation', 'Robotic Cell']
     }
   ];
 

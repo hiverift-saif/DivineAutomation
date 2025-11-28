@@ -5,12 +5,78 @@ import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 interface ContactPageProps {
   setCurrentPage?: (page: string) => void;
 }
 
 export function ContactPage({ setCurrentPage }: ContactPageProps) {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+
+    const payload = {
+      fullName: form.name.value.trim(),
+      companyName: form.company.value.trim() || "Not provided",
+      emailAddress: form.email.value.trim(),
+      phoneNumber: form.phone.value.trim(),
+      subject: form.subject.value.trim(),
+      message: form.message.value.trim(),
+      serviceInterest: form.service.value || "Not specified",
+      formType: "devineautomation",
+    };
+
+    try {
+      const response = await fetch(
+        "https://cakistockmarket.com/api/v1/contact/devines-contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok && result.statusCode === 201) {
+        Swal.fire({
+          icon: "success",
+          title: "Thank You!",
+          html: `<strong>${payload.fullName}</strong>,<br/>Your message has been sent successfully.<br/>We'll get back to you very soon!`,
+          confirmButtonColor: "#1e40af",
+          timer: 6000,
+          timerProgressBar: true,
+          iconColor: "#1e40af",
+        });
+        form.reset();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Send",
+          text: result.message || "Something went wrong. Please try again later.",
+          confirmButtonColor: "#1e40af",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "Unable to connect. Please check your internet and try again.",
+        confirmButtonColor: "#1e40af",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       {/* Page Header */}
@@ -22,7 +88,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 to-blue-700/95" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-white mb-4">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Get in touch with our team to discuss your automation requirements
           </p>
@@ -42,11 +108,14 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                       <MapPin className="h-6 w-6 text-blue-900" />
                     </div>
                     <div>
-                      <h3 className="mb-2">Address</h3>
+                      <h3 className="mb-2 font-semibold">Address</h3>
                       <p className="text-gray-600 text-sm">
-                        20/4, Napco Gear Complex,<br />
-                        Plot No. 19, Mathura Road,<br />
-                        Faridabad – 121004,<br />
+                        Divine Automation Pvt. Ltd.<br />
+                        <span className="text-blue-900">GST: 06AADCD0101H1ZG</span><br />
+                        20/4, Plot No. 19, Napco Gear Complex,<br />
+                        Mathura Road, Faridabad 121004<br />
+                        Opp. to Sant Surdas Metro Station,<br />
+                        Near Bhatia Crane, Sector 5<br />
                         Haryana, India
                       </p>
                     </div>
@@ -61,7 +130,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                       <Phone className="h-6 w-6 text-blue-900" />
                     </div>
                     <div>
-                      <h3 className="mb-2">Phone</h3>
+                      <h3 className="mb-2 font-semibold">Phone</h3>
                       <a href="tel:9810275986" className="text-gray-600 text-sm hover:text-blue-900 block">
                         +91 9810275986
                       </a>
@@ -80,9 +149,15 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                       <Mail className="h-6 w-6 text-blue-900" />
                     </div>
                     <div>
-                      <h3 className="mb-2">Email</h3>
-                      <a href="mailto:info@divineautomation.in" className="text-gray-600 text-sm hover:text-blue-900">
+                      <h3 className="mb-2 font-semibold">Email</h3>
+                      <a href="mailto:info@divineautomation.in" className="text-gray-600 text-sm hover:text-blue-900 block">
                         info@divineautomation.in
+                      </a>
+                      <a href="mailto:dmandal77@yahoo.com" className="text-gray-600 text-sm hover:text-blue-900 block">
+                        dmandal77@yahoo.com
+                      </a>
+                      <a href="mailto:divineautomation@yahoo.com" className="text-gray-600 text-sm hover:text-blue-900 block">
+                        divineautomation@yahoo.com
                       </a>
                     </div>
                   </div>
@@ -96,7 +171,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                       <Clock className="h-6 w-6 text-blue-900" />
                     </div>
                     <div>
-                      <h3 className="mb-2">Business Hours</h3>
+                      <h3 className="mb-2 font-semibold">Business Hours</h3>
                       <p className="text-gray-600 text-sm">
                         Monday - Saturday<br />
                         9:00 AM - 6:00 PM
@@ -111,42 +186,44 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
             <div className="lg:col-span-2">
               <Card>
                 <CardContent className="p-8">
-                  <h2 className="text-blue-900 mb-6">Send Us a Message</h2>
-                  <form className="space-y-6">
+                  <h2 className="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name">Full Name *</Label>
-                        <Input id="name" placeholder="Enter your name" required />
+                        <Input id="name" name="name" placeholder="Enter your name" required disabled={loading} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="company">Company Name</Label>
-                        <Input id="company" placeholder="Enter your company name" />
+                        <Input id="company" name="company" placeholder="Enter your company name" disabled={loading} />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="email">Email Address *</Label>
-                        <Input id="email" type="email" placeholder="your.email@example.com" required />
+                        <Input id="email" name="email" type="email" placeholder="your.email@example.com" required disabled={loading} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" type="tel" placeholder="+91 XXXXXXXXXX" required />
+                        <Input id="phone" name="phone" type="tel" placeholder="+91 XXXXXXXXXX" required disabled={loading} />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject *</Label>
-                      <Input id="subject" placeholder="What is this regarding?" required />
+                      <Input id="subject" name="subject" placeholder="What is this regarding?" required disabled={loading} />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="message">Message *</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="Tell us about your automation requirements..."
                         className="min-h-[150px]"
                         required
+                        disabled={loading}
                       />
                     </div>
 
@@ -154,21 +231,28 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                       <Label htmlFor="service">Service Interest</Label>
                       <select
                         id="service"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        name="service"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                        disabled={loading}
                       >
                         <option value="">Select a service</option>
-                        <option value="feasibility">Technical Feasibility Study</option>
-                        <option value="design">System Design & Engineering</option>
-                        <option value="robotics">Robotic Integration</option>
-                        <option value="spm">Special Purpose Machines</option>
-                        <option value="testing">Testing Systems</option>
-                        <option value="assembly">Assembly Automation</option>
-                        <option value="other">Other</option>
+                        <option value="Technical Feasibility Study">Technical Feasibility Study</option>
+                        <option value="System Design & Engineering">System Design & Engineering</option>
+                        <option value="Robotic Integration">Robotic Integration</option>
+                        <option value="Special Purpose Machines">Special Purpose Machines</option>
+                        <option value="Testing Systems">Testing Systems</option>
+                        <option value="Assembly Automation">Assembly Automation</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full md:w-auto bg-blue-900 hover:bg-blue-800">
-                      Send Message
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full md:w-auto bg-blue-900 hover:bg-blue-800"
+                      disabled={loading}
+                    >
+                      {loading ? "Sending Message..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -185,7 +269,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
           <div className="max-w-5xl mx-auto">
             <div className="relative h-96 bg-gray-300 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.123456789!2d77.3200000!3d28.4000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI0JzAwLjAiTiA3N8KwMTknMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3510.980849776774!2d77.31086357549087!3d28.359428575814906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDIxJzMzLjkiTiA3N8KwMTgnNDguNCJF!5e0!3m2!1sen!2sin!4v1764318138041!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

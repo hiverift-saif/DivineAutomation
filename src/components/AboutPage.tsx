@@ -2,6 +2,8 @@ import { Target, Eye, Building2, Users } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+import exhibitionBooth from 'figma:asset/f456db87058c14512bf57b12e648e922d58d8043.png';
+import factoryFaridabad from 'figma:asset/925dc0234cd512908d50efb516bc495a3d03a738.png';
 
 interface AboutPageProps {
   setCurrentPage?: (page: string) => void;
@@ -49,9 +51,9 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
               </p>
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZW5naW5lZXJpbmd8ZW58MXx8fHwxNzYyODUzNTIyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Industrial Engineering"
+              <img
+                src={exhibitionBooth}
+                alt="Divine Automation Exhibition Booth"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
@@ -163,15 +165,8 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group order-2 lg:order-1">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW51ZmFjdHVyaW5nJTIwcGxhbnR8ZW58MXx8fHwxNzYyNzY1NzYxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Manufacturing Facility"
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-14 w-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-xl">
                   <Building2 className="h-7 w-7" />
@@ -201,6 +196,16 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
                   <span className="text-white/90 leading-relaxed">Dedicated commissioning and training areas</span>
                 </li>
               </ul>
+            </div>
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
+              <img
+                src={factoryFaridabad}
+                alt="Divine Automation Factory - Faridabad"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/90 to-transparent p-6">
+                <p className="text-white">Our Manufacturing Facility in Faridabad</p>
+              </div>
             </div>
           </div>
         </div>
