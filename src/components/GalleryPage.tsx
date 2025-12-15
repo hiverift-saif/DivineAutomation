@@ -9,6 +9,8 @@ import controlPanel from 'figma:asset/b74b7d0eaa180d78acbe2c779455e1a400b58f94.p
 import automationPanel from 'figma:asset/7e05c796984544e040a9907c0d69206ee125e4c8.png';
 import roboticCell from 'figma:asset/a092a76cc5c0377ef164e382d7b5bf60f5d43567.png';
 import acKnobTester from 'figma:asset/a1bf2e7b1d5453b7520086d1ea22b6ba8ae07eb8.png';
+import acKnobTester2 from '../assets/machine.jpeg';
+
 
 interface GalleryPageProps {
   setCurrentPage?: (page: string) => void;
@@ -60,7 +62,15 @@ export function GalleryPage({ setCurrentPage }: GalleryPageProps) {
       url: acKnobTester,
       title: 'AC Knob Torque Testing Machine - Subros',
       description: 'Machine to measure the torque required to move car AC knobs in different modes and plot a graph with automatic data recording using laser bar code reader'
-    }
+    },
+    //     {
+    //   url: acKnobTester,
+    //   title: 'AC Knob Torque Testing Machine - Subros',
+    //   description: 'It is an automatic tile cutting machine which cuts zypsum type partition or ceiling boards into size using diamond cutter.'
+    // }
+
+
+    
   ];
 
   return (

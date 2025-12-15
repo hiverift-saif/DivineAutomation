@@ -89,8 +89,8 @@ export function Footer({ setCurrentPage }: FooterProps) {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <a href="mailto:info@divineautomation.in" className="text-gray-400 hover:text-white text-sm">
-                    info@divineautomation.in
+                  <a href="mailto:info@divineautomation.co.in" className="text-gray-400 hover:text-white text-sm">
+                    info@divineautomation.co.in 
                   </a>
                   <a href="mailto:dmandal77@yahoo.com" className="text-gray-400 hover:text-white text-sm">
                     dmandal77@yahoo.com

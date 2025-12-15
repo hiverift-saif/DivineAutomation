@@ -26,41 +26,67 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4 bg-blue-100 text-blue-900 hover:bg-blue-200">Our Story</Badge>
-              <h2 className="text-blue-900 mb-6 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">Company Overview</h2>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Divine Automation Pvt. Ltd. was founded in 2004 by Mr. Dwaipayan Mandal, 
-                an IIT Kharagpur alumnus (B-Tech Hons. ECE 1985), to deliver innovative 
-                automation solutions meeting international quality standards.
-              </p>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Our team comprises experienced engineers with over four decades of expertise 
-                in design, development, and commissioning of industrial automation systems. 
-                We specialize in turnkey solutions that transform manufacturing processes 
-                across diverse industries.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                From conceptualization to installation and after-sales support, we provide 
-                comprehensive automation services that enhance productivity, ensure quality, 
-                and reduce operational costs.
-              </p>
-            </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
-              <img
-                src={exhibitionBooth}
-                alt="Divine Automation Exhibition Booth"
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* Company Overview */}
+<section className="py-20">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left Content */}
+      <div>
+        <Badge className="mb-4 bg-blue-100 text-blue-900 hover:bg-blue-200">
+          Our Story
+        </Badge>
+
+        <h2 className="text-blue-900 mb-6 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">
+          Company Overview
+        </h2>
+
+        <p className="text-gray-700 mb-4 leading-relaxed">
+          Divine Automation Pvt. Ltd. was founded in 2004 by Mr. Dwaipayan Mandal, 
+          an IIT Kharagpur alumnus (B-Tech Hons. ECE 1985), to deliver innovative 
+          automation solutions meeting international quality standards.
+        </p>
+
+        <p className="text-gray-700 mb-4 leading-relaxed">
+          Our team comprises experienced engineers with over four decades of expertise 
+          in design, development, and commissioning of industrial automation systems. 
+          We specialize in turnkey solutions that transform manufacturing processes 
+          across diverse industries.
+        </p>
+
+        <p className="text-gray-700 leading-relaxed">
+          From conceptualization to installation and after-sales support, we provide 
+          comprehensive automation services that enhance productivity, ensure quality, 
+          and reduce operational costs.
+        </p>
+      </div>
+
+      {/* Right Image + Heading */}
+      <div>
+     <div>
+  <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group mb-10">
+    <img
+      src={exhibitionBooth}
+      alt="Divine Automation Exhibition Booth"
+      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+  </div>
+
+  <h1 className="text-center text-lg md:text-xl font-semibold text-blue-900">
+    In 2013, Divine Automation Pvt. Ltd. took part in the Automag Automation Exhibition at Pragati Maidan
+  </h1>
+</div>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Mission & Vision */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">

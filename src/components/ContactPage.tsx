@@ -34,7 +34,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
 
     try {
       const response = await fetch(
-        "https://cakistockmarket.com/api/v1/contact/devines-contact",
+        "https://cakistockmarket.com/makemytrade-api/api/v1/contact/devines-contact",
         {
           method: "POST",
           headers: {
@@ -150,8 +150,8 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                     </div>
                     <div>
                       <h3 className="mb-2 font-semibold">Email</h3>
-                      <a href="mailto:info@divineautomation.in" className="text-gray-600 text-sm hover:text-blue-900 block">
-                        info@divineautomation.in
+                      <a href="mailto:info@divineautomation.co.in" className="text-gray-600 text-sm hover:text-blue-900 block">
+                        info@divineautomation.co.in
                       </a>
                       <a href="mailto:dmandal77@yahoo.com" className="text-gray-600 text-sm hover:text-blue-900 block">
                         dmandal77@yahoo.com
@@ -297,7 +297,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
                 Call Now: +91 9810275986
               </Button>
             </a>
-            <a href="mailto:info@divineautomation.in">
+            <a href="mailto:info@divineautomation.co.in">
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
                 <Mail className="h-5 w-5 mr-2" />
                 Email Us

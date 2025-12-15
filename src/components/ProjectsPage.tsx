@@ -13,7 +13,7 @@ export function ProjectsPage({ setCurrentPage }: ProjectsPageProps) {
       client: 'SUNDAN LTD.',
       title: 'HVAC Testing System',
       category: 'Testing Machines',
-      description: 'Complete automated testing system for HVAC units with performance validation, leak testing, and noise measurement capabilities.',
+      description: 'Sunden Ltd. HVAC system measures air volume also passed through Anemometer.',
       technologies: ['PLC Control', 'SCADA', 'Data Logging', 'Pneumatic Systems']
     },
     {

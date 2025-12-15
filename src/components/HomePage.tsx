@@ -19,6 +19,8 @@ import project5Image from 'figma:asset/96b3b39da30a1cd35e9c3aecf194ee791cfac138.
 import video5 from  "../assets/project5Image.mp4";
 import video2 from  "../assets/video2.mp4";
 import video3 from  "../assets/video3.mp4";
+import video6 from  "../assets/video7.mp4";
+
 
 
 interface HomePageProps {
@@ -407,27 +409,34 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
 
      {
                 title: 'Automated Machine Tending with Yaskawa Robot and Fanuc CNC Machines',
-                client: 'Raunaq Auto',
+                client: 'Sunbeam Auto',
                 type: "video",
                 image: video5,
-                description: 'Yaskawa robot operates four Fanuc CNC machines with conveyors, ensuring smooth handling, higher productivity, and efficiency.'
+                description: 'It is three CNC Turning machines are operated by one Yaskawa make Robot HPD20 to replace 9 skilled operators. Only one unskilled operator is required to load parts in revolving conveyor after one hour and check the quality of the finished parts which are Hero Motor Cycle engine blocks.'
               },
               
 
 {
   title: 'Heavy-Duty CNC Machine Tending with Yaskawa Motoman GP25 & Fanuc RoboDrill',
-  client: 'Raunaq Auto',
+  client: 'Sunbeam Auto',
   type: "video",
   image: video2,  // jo pehli wali video hai
-  description: 'Yaskawa Motoman GP25 robotic cell automatically loads and unloads heavy billets in Fanuc CNC machining centers, enabling 24×7 unmanned production with zero manual intervention.'
+  description: "Here Yaskawa Robot GP-7 is used to load/unload four types of gears in a Mitsubishi make gear cutting hobbing machine which improved 30% productivity since the machine is run during lunch time also automatically."
 },
 
 {
   title: 'High-Speed Small Parts Tray Handling with Yaskawa Motoman GP7',
-  client: 'Raunaq Auto',
+  client: 'Sunbeam Auto',
   type: "video",
   image: video3,  // jo doosri wali video hai
-  description: 'Yaskawa GP7 robot with custom pneumatic gripper performs precision picking and organized placement of small machined components from trays at 60+ parts per minute cycle time.'
+  description: "Here Yaskawa Robot GP-7 is used to load/unload four types of gears in a Mitsubishi make gear cutting hobbing machine which improved 30% productivity since the machine is run during lunch time also automatically."
+},
+{
+  title: 'Mig welding of ss sheet of 1 mm thickness by OTC Robots',
+  client: 'World Wide Furniture Industry',
+  type: "video",
+  image: video6,  // jo doosri wali video hai
+  description: "  Mig welding of furniture sofa sets arm rest and legs where two parts are fused by Mig welding without any electrodes using Japanese OTC Robots."
 }
 
               
