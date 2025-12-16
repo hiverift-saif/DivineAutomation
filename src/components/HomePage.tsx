@@ -421,12 +421,12 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
   client: 'Sunbeam Auto',
   type: "video",
   image: video2,  // jo pehli wali video hai
-  description: "Here Yaskawa Robot GP-7 is used to load/unload four types of gears in a Mitsubishi make gear cutting hobbing machine which improved 30% productivity since the machine is run during lunch time also automatically."
+  description: "Here three numbers of CNC Turning machines are operated by a Yaskawa HP D20 Robot to replace 9 operators in a day and a contract operator only checks the quality of jobs and load parts in a rotary Auto loading system and the part is Hero Motor Cycles engine head."
 },
 
 {
   title: 'High-Speed Small Parts Tray Handling with Yaskawa Motoman GP7',
-  client: 'Sunbeam Auto',
+  client: 'Raunaq Auto',
   type: "video",
   image: video3,  // jo doosri wali video hai
   description: "Here Yaskawa Robot GP-7 is used to load/unload four types of gears in a Mitsubishi make gear cutting hobbing machine which improved 30% productivity since the machine is run during lunch time also automatically."

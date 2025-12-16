@@ -298,7 +298,7 @@ export function ContactPage({ setCurrentPage }: ContactPageProps) {
               </Button>
             </a>
             <a href="mailto:info@divineautomation.co.in">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-white border-white bg-white/10">
                 <Mail className="h-5 w-5 mr-2" />
                 Email Us
               </Button>
